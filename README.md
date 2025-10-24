@@ -80,4 +80,3 @@ I tested that the hello world block showed up in a page
 
 ---
 
-If you want, I can tailor this README to your exact repo layout (e.g., your Docker compose service names, screenshots/GIFs of the block in action, and a short “What I learned” section).
