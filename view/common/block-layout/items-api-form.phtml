@@ -1,0 +1,40 @@
+<?php
+$keyword = $data['keyword'] ?? '';
+$limit   = $data['limit'] ?? 5;
+?>
+
+<div class="field">
+    <div class="field-meta">
+        <label for="items-api-keyword">Keyword</label>
+        <div class="explanation">
+            Search term to filter items (uses Omeka's "search" parameter).
+        </div>
+    </div>
+    <div class="inputs">
+        <input
+            type="text"
+            id="items-api-keyword"
+            name="o:block[__blockIndex__][o:data][keyword]"
+            value="<?= $this->escapeHtml($keyword) ?>"
+        >
+    </div>
+</div>
+
+<div class="field">
+    <div class="field-meta">
+        <label for="items-api-limit">Limit</label>
+        <div class="explanation">
+            Number of items to show.
+        </div>
+    </div>
+    <div class="inputs">
+        <input
+            type="number"
+            id="items-api-limit"
+            name="o:block[__blockIndex__][o:data][limit]"
+            min="1"
+            max="50"
+            value="<?= $this->escapeHtml($limit) ?>"
+        >
+    </div>
+</

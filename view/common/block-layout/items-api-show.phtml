@@ -1,0 +1,30 @@
+<?php
+?>
+<div class="block block-items-api">
+    <h2>API Items (Sandbox)</h2>
+
+    <p>
+        Showing up to <?= $this->escapeHtml($limit) ?> item(s)
+        <?php if ($keyword): ?>
+            matching keyword: <strong><?= $this->escapeHtml($keyword) ?></strong>
+        <?php else: ?>
+            (no keyword filter)
+        <?php endif; ?>
+    </p>
+
+    <?php if (empty($items)): ?>
+        <p>No items found.</p>
+    <?php else: ?>
+        <ul>
+            <?php foreach ($items as $item): ?>
+                <?php $title = $item->displayTitle() ?: '[Untitled]'; ?>
+                <li>
+                    <a href="<?= $this->escapeHtml($item->url()) ?>">
+                        <?= $this->escapeHtml($title) ?>
+                    </a>
+                    (ID: <?= $this->escapeHtml($item->id()) ?>)
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+</div>
